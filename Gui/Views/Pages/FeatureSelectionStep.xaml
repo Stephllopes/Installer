@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="ProjectMainInstaller.Gui.Views.Pages.FeatureSelectionStep"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModels="clr-namespace:ProjectMainInstaller.Gui.ViewModels"
+             d:DataContext="{d:DesignInstance viewModels:FeatureSelectionStepViewModel}"
+             d:DesignHeight="290" d:DesignWidth="542"
+             mc:Ignorable="d">
+    <DockPanel Margin="10"
+               LastChildFill="False">
+        <Grid>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="34" Margin="27,31,0,0" TextWrapping="Wrap" Text="FeatureSelectionStep Dialog" VerticalAlignment="Top" Width="288" FontSize="20"/>
+            <Label x:Name="label" Content="FeatureSelectionStep Dialog" HorizontalAlignment="Left" Margin="32,108,0,0" VerticalAlignment="Top" FontSize="18"/>
+
+        </Grid>
+    </DockPanel>
+</UserControl>

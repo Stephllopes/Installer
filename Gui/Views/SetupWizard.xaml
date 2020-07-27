@@ -1,0 +1,61 @@
+﻿<Window x:Class="ProjectMainInstaller.Gui.Views.SetupWizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:viewModels="clr-namespace:ProjectMainInstaller.Gui.ViewModels"
+        d:DesignHeight="450" d:DesignWidth="550"
+        Title="Installer 1.0.0 Build 9999 Setup"
+        d:DataContext="{d:DesignInstance viewModels:SetupWizardViewModel}"
+        mc:Ignorable="d">
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Top">
+            <TextBlock Height="50"
+                       Margin="15 15 0 0"
+                       FontSize="30" Text="Main Installer">
+            </TextBlock>
+        </Grid>
+        <Separator Height="2"
+                   DockPanel.Dock="Top" />
+
+        <Grid Height="50"
+              Margin="0 0 0 0"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch"
+              DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="279*"/>
+                <ColumnDefinition Width="263*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="CancelButton"
+                    Content="Cancel" 
+                    HorizontalAlignment="Left" 
+                    Height="25" 
+                    Margin="106,9,0,0" 
+                    VerticalAlignment="Top"
+                    Command="{Binding CurrentPageView.DataContext.CancelCommand}"
+                    Width="80" 
+                    IsCancel="True" Grid.Column="1"/>
+            <Button x:Name="NextPageButton" 
+                    Content="&gt;" 
+                    HorizontalAlignment="Left" 
+                    Height="25" 
+                    Margin="230,9,0,0" 
+                    VerticalAlignment="Top"
+                    Command="{Binding CurrentPageView.DataContext.NextPageCommand}"
+                    Width="23" RenderTransformOrigin="-1.522,0.44" Grid.Column="1"/>
+            <Button x:Name="PreviousPageButton" 
+                Content="&lt;" 
+                HorizontalAlignment="Left" 
+                Height="25" 
+                Margin="197,9,0,0" 
+                VerticalAlignment="Top"
+                Command="{Binding CurrentPageView.DataContext.PreviousPageCommand}"
+                Width="23" RenderTransformOrigin="-1.522,0.44" Grid.Column="1"/>
+        </Grid>
+        <Separator Height="2"
+                   Margin="0 0 0 1"
+                   DockPanel.Dock="Bottom" />
+        <ContentPresenter Content="{Binding CurrentPageView}" Margin="0,0,0,0" />
+    </DockPanel>
+</Window>
