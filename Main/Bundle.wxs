@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Bundle Name="Main" Version="1.0.0.0" Manufacturer="Philips Medical Systems Nederland B.V." UpgradeCode="0d37877b-7773-40fd-9089-467ab2580d7d">
+    <BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost">
+      <Payload Name="BootstrapperCore.config" SourceFile="$(var.Gui.TargetDir)BootstrapperCore.config" />
+      <Payload SourceFile="$(var.Gui.TargetPath)"/>
+    </BootstrapperApplicationRef>
+
+    <WixVariable Id="WixMbaPrereqLicenseUrl" Value="" />
+    <WixVariable Id="WixMbaPrereqPackageId" Value="" />
+
+    <Chain>
+      <!--just example, because the wix complains if doesn't have any package to install-->
+      <MsiPackage Id="SetupProject2"
+                  Cache="no"
+                  Permanent="no"
+                  Vital="yes"
+                  Visible="yes"
+                  SourceFile="..\Delivery\$(var.Configuration)\SetupProject2.msi"
+                  ForcePerMachine="yes"
+                  DisplayInternalUI="yes"/>
+    </Chain>
+  </Bundle>
+</Wix>
